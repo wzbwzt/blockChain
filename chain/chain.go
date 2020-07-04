@@ -45,11 +45,10 @@ func Add(data *block.Block,preNode *Node) *Node{
 //查看链表中的数据
 func ShowNodeList(node *Node)[]block.Block{
 	tmp:=node
-	list:=[]block.Block{
-		*node.Data,
-	}
+	list:=make([]block.Block,0)
 	for {
 		if tmp.NextNode==nil {
+			list=append(list,*tmp.Data)
 			break
 		}
 		list=append(list,*tmp.Data)

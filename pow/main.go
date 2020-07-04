@@ -13,5 +13,7 @@ func main(){
 	firstNode := chain.CreateFirstNode(&firstBlock)
 	chain.Add(&newBlock, firstNode)
 	list := chain.ShowNodeList(firstNode)
-	fmt.Println(list)
+	for _,e:=range list{
+		fmt.Printf("%#v\n",e)
+	}
 }

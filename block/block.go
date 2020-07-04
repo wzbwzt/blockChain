@@ -13,12 +13,12 @@ const Diff =3
 
 //区块
 type  Block struct {
+	Index int
 	PreHash string
 	HashCode string
 	TimeStamp int
 	Diff int
 	Data string
-	Index int
 	Nonce int
 }
 //生成哈希值
@@ -36,7 +36,7 @@ func CreateFirstBlock(data string)(firstBlock Block){
 	firstBlock.TimeStamp=int(time.Now().Unix())
 	firstBlock.Diff=Diff
 	firstBlock.Data=data
-	firstBlock.Index=1
+	firstBlock.Index=0
 	firstBlock.Nonce=123
 	firstBlock.HashCode=GenerateHashCode(firstBlock)
 	return
