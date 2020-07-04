@@ -9,6 +9,8 @@ import (
 	"time"
 )
 
+const Diff =3
+
 //区块
 type  Block struct {
 	PreHash string
@@ -32,7 +34,7 @@ func  GenerateHashCode(block Block)string{
 func CreateFirstBlock(data string)(firstBlock Block){
 	firstBlock.PreHash="0"
 	firstBlock.TimeStamp=int(time.Now().Unix())
-	firstBlock.Diff=5
+	firstBlock.Diff=Diff
 	firstBlock.Data=data
 	firstBlock.Index=1
 	firstBlock.Nonce=123
@@ -57,7 +59,7 @@ func CreatNewBlock(preBlock Block, data string)(newBlock Block){
 	newBlock.PreHash=preBlock.HashCode
 	newBlock.Data=data
 	newBlock.Index=preBlock.Index+1
-	newBlock.Diff=2
+	newBlock.Diff=Diff
 	newBlock.Nonce=123
 	newBlock.TimeStamp=int(time.Now().Unix())
 	hash := Pow(&newBlock)

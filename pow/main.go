@@ -11,7 +11,7 @@ func main(){
 	newBlock := block.CreatNewBlock(firstBlock, "区块2")
 
 	firstNode := chain.CreateFirstNode(&firstBlock)
-	nextNode := chain.Add(&newBlock, firstNode)
-	fmt.Println(nextNode)
-	chain.ShowNodeList(firstNode)
+	chain.Add(&newBlock, firstNode)
+	list := chain.ShowNodeList(firstNode)
+	fmt.Println(list)
 }
